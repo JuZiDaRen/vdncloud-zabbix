@@ -78,7 +78,7 @@
   
   <build>
       
-  <finalName>${artifactId}-${version}</finalName> 	
+  <finalName>${project.artifactId}-${project.version}</finalName> 	
   <sourceDirectory>src/main/java</sourceDirectory>
 		 <resources>
         <resource>
