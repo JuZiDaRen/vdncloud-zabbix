@@ -43,6 +43,14 @@ public class ZabbixApiParamter {
         }
     }
     
-    
+    public static enum ITEM_VALUE_TYPE {
+        NUMERIC_FLOAT(0), CHARACTOR(1), LOG(2), NUMERIC_UNSIGNED(3), TEXT(4);
+
+        public int value;
+
+        private ITEM_VALUE_TYPE(int value) {
+            this.value = value;
+        }
+    }
 	
 }

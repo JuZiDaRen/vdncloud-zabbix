@@ -1,6 +1,8 @@
 package com.vdncloud.zabbix;
 
 import com.vdncloud.zabbix.host.Host;
+import com.vdncloud.zabbix.hostgroup.Hostgroup;
+import com.vdncloud.zabbix.item.Item;
 import com.vdncloud.zabbix.user.User;
 import com.vdncloud.zabbix.user.UserLoginRequest;
 import com.vdncloud.zabbix.user.UserLoginResponse;
@@ -34,6 +36,15 @@ public class ZabbixApi {
        }
        
        
+       public Hostgroup hostgroup() {
+
+           return new Hostgroup(this.apiUrl, this.auth);
+       }
        
+       
+       public Item item() {
+
+           return new Item(this.apiUrl, this.auth);
+       }
        
 }
