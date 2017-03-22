@@ -42,6 +42,51 @@ public class Item extends ZabbixApiMethod{
 		
 	}
 	
+	public ItemDeleteResponse delete(ItemDeleteRequest request) throws ZabbixApiException{
+		ItemDeleteResponse response=null;
+		request.setAuth(auth);
+		
+		Gson gson=new GsonBuilder().setPrettyPrinting().create();
+		
+		String requestJson=gson.toJson(request);
+		
+		try{
+			String responseJson=sendRequest(requestJson);
+			
+			response=gson.fromJson(responseJson, ItemDeleteResponse.class);
+		} catch(ZabbixApiException e){
+			throw new ZabbixApiException(e);
+		}
+		
+		return response;
+		
+		
+		
+	}
+	
+	
+	public ItemGetResponse get(ItemGetRequest request) throws ZabbixApiException{
+		
+		ItemGetResponse response=null;
+		
+		request.setAuth(auth);
+		
+		Gson gson=new GsonBuilder().setPrettyPrinting().create();
+		
+		String reuqestJson=gson.toJson(request);
+		
+		try{
+			String responseJson=sendRequest(reuqestJson);
+			response=gson.fromJson(responseJson, ItemGetResponse.class);
+			
+		}catch (ZabbixApiException e){
+			throw new ZabbixApiException(e);
+		}
+		
+		return response;
+		
+	}
+	
 	
 
 }
