@@ -9,8 +9,8 @@ import com.google.gson.GsonBuilder;
 import static org.junit.Assert.fail;
 public class ZabbixApiTestBase {
     protected static Logger logger=LoggerFactory.getLogger(ZabbixApiTestBase.class);
-    protected String user="zhangrongjun";
-    protected String password="zhangrongjun123!@#";
+    protected String user="Admin";
+    protected String password="zabbix";
     
     protected ZabbixApi zabbixApi;
     
@@ -20,8 +20,8 @@ public class ZabbixApiTestBase {
     
     protected void login(String user,String password){
     	try{
-    	//	zabbixApi = new ZabbixApi("http://192.168.31.188/zabbix/api_jsonrpc.php");
-    		zabbixApi = new ZabbixApi("http://monitor.vdncloud.com:62947/zabbix/api_jsonrpc.php");
+    		zabbixApi = new ZabbixApi("http://192.168.31.188/zabbix/api_jsonrpc.php");
+    	//	zabbixApi = new ZabbixApi("http://monitor.vdncloud.com:62947/zabbix/api_jsonrpc.php");
             zabbixApi.login(user, password);
     	}catch(Exception e){
     		fail(e.getMessage());

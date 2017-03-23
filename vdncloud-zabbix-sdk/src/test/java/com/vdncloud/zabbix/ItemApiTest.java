@@ -13,6 +13,8 @@ import com.vdncloud.zabbix.item.ItemDeleteRequest;
 import com.vdncloud.zabbix.item.ItemDeleteResponse;
 import com.vdncloud.zabbix.item.ItemGetRequest;
 import com.vdncloud.zabbix.item.ItemGetResponse;
+import com.vdncloud.zabbix.item.ItemUpdateRequest;
+import com.vdncloud.zabbix.item.ItemUpdateResponse;
 
 public class ItemApiTest extends ZabbixApiTestBase{
 
@@ -55,30 +57,46 @@ public class ItemApiTest extends ZabbixApiTestBase{
 //		
 //	}
 	
+//	@Test
+//	public void getTest() throws Exception{
+//		
+//		ItemGetRequest request=new ItemGetRequest();
+//		
+//		ItemGetRequest.Params params=request.getParams();
+//		
+//		JsonObject json=new JsonObject();
+//		json.addProperty("key_", "ram_active");
+//		
+//		ArrayList<Integer> hostids=new ArrayList<Integer>();
+//		hostids.add(10509);
+//		
+//		params.setSearch(json);
+//		params.setHostids(hostids);
+//		ItemGetResponse response=zabbixApi.item().get(request);
+//		
+//		System.out.println(response.getResult());
+//		
+//	}
+	
+	
 	@Test
-	public void getTest() throws Exception{
+	public void updateTest() throws Exception{
 		
-		ItemGetRequest request=new ItemGetRequest();
-		
-		ItemGetRequest.Params params=request.getParams();
-		
-		JsonObject json=new JsonObject();
-		json.addProperty("key_", "ram_active");
-		
-		ArrayList<Integer> hostids=new ArrayList<Integer>();
-		hostids.add(10509);
-		
-		params.setSearch(json);
-		params.setHostids(hostids);
-		ItemGetResponse response=zabbixApi.item().get(request);
-		
-		System.out.println(response.getResult());
+		ItemUpdateRequest request=new ItemUpdateRequest();
+		ItemUpdateRequest.Params params=request.getParams();
 		
 		
+		params.setItemid(23669);
 		
+		params.setDescription("呵呵111");
+		params.setName("test-123");
 		
+		ItemUpdateResponse response=zabbixApi.item().update(request);	
+		
+		System.out.println(getGson().toJson(response));
 		
 	}
+	
 	
 	
 	

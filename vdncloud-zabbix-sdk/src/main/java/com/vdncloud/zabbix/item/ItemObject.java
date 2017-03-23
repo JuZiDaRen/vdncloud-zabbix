@@ -16,6 +16,17 @@ public class ItemObject {
      private String name;
      private Integer type;
      private Integer value_type;
+     
+     private Long lastclock;
+     private Integer lastns;
+     private String lastvalue;
+     private String prevalue;
+     private String units;
+     private Integer status;
+     private Integer lifetime;
+     private Integer history;
+     private String description;
+     
 	/**
 	 * @return the itemid
 	 */
@@ -112,6 +123,117 @@ public class ItemObject {
 	public void setValue_type(Integer value_type) {
 		this.value_type = value_type;
 	}
-       
+	/**
+	 * @return the lastclock
+	 */
+	public Long getLastclock() {
+		return lastclock;
+	}
+	/**
+	 * @param lastclock the lastclock to set
+	 */
+	public void setLastclock(Long lastclock) {
+		this.lastclock = lastclock;
+	}
+	/**
+	 * @return the lastns
+	 */
+	public Integer getLastns() {
+		return lastns;
+	}
+	/**
+	 * @param lastns the lastns to set
+	 */
+	public void setLastns(Integer lastns) {
+		this.lastns = lastns;
+	}
+	/**
+	 * @return the lastvalue
+	 */
+	public String getLastvalue() {
+		return lastvalue;
+	}
+	/**
+	 * @param lastvalue the lastvalue to set
+	 */
+	public void setLastvalue(String lastvalue) {
+		this.lastvalue = lastvalue;
+	}
+	/**
+	 * @return the prevalue
+	 */
+	public String getPrevalue() {
+		return prevalue;
+	}
+	/**
+	 * @param prevalue the prevalue to set
+	 */
+	public void setPrevalue(String prevalue) {
+		this.prevalue = prevalue;
+	}
+	/**
+	 * @return the units
+	 */
+	public String getUnits() {
+		return units;
+	}
+	/**
+	 * @param units the units to set
+	 */
+	public void setUnits(String units) {
+		this.units = units;
+	}
+	/**
+	 * @return the status
+	 */
+	public Integer getStatus() {
+		return status;
+	}
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	/**
+	 * @return the lifetime
+	 */
+	public Integer getLifetime() {
+		return lifetime;
+	}
+	/**
+	 * @param lifetime the lifetime to set
+	 */
+	public void setLifetime(Integer lifetime) {
+		this.lifetime = lifetime;
+	}
+	/**
+	 * @return the history
+	 */
+	public Integer getHistory() {
+		return history;
+	}
+	/**
+	 * @param history the history to set
+	 */
+	public void setHistory(Integer history) {
+		this.history = history;
+	}
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}	
+	
+	
+	
+	
      
 }

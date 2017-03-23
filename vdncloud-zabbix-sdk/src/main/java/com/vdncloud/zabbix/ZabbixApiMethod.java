@@ -43,7 +43,8 @@ public class ZabbixApiMethod {
     	 try{
     		 
     		 httpPost.setHeader("Content-Type", "application/json-rpc");
-    		 httpPost.setEntity(new StringEntity(reqJson));
+    		 
+    		 httpPost.setEntity(new StringEntity(reqJson,"utf-8"));
     		 
     		 DefaultHttpClient client=new DefaultHttpClient();
     		 resp=client.execute(httpPost);
