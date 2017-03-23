@@ -1,9 +1,12 @@
 package com.vdncloud.zabbix;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 
+import com.google.gson.JsonObject;
 import com.vdncloud.zabbix.item.ItemCreateRequest;
 import com.vdncloud.zabbix.item.ItemCreateResponse;
 import com.vdncloud.zabbix.item.ItemDeleteRequest;
@@ -59,11 +62,18 @@ public class ItemApiTest extends ZabbixApiTestBase{
 		
 		ItemGetRequest.Params params=request.getParams();
 		
-		params.setSearch("key_:system");
+		JsonObject json=new JsonObject();
+		json.addProperty("key_", "ram_active");
 		
+		ArrayList<Integer> hostids=new ArrayList<Integer>();
+		hostids.add(10509);
+		
+		params.setSearch(json);
+		params.setHostids(hostids);
 		ItemGetResponse response=zabbixApi.item().get(request);
 		
 		System.out.println(response.getResult());
+		
 		
 		
 		

@@ -74,7 +74,7 @@ public class Item extends ZabbixApiMethod{
 		Gson gson=new GsonBuilder().setPrettyPrinting().create();
 		
 		String reuqestJson=gson.toJson(request);
-		
+
 		try{
 			String responseJson=sendRequest(reuqestJson);
 			response=gson.fromJson(responseJson, ItemGetResponse.class);
