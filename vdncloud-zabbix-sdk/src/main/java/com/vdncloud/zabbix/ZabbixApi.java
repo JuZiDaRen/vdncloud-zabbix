@@ -3,6 +3,7 @@ package com.vdncloud.zabbix;
 import com.vdncloud.zabbix.host.Host;
 import com.vdncloud.zabbix.hostgroup.Hostgroup;
 import com.vdncloud.zabbix.item.Item;
+import com.vdncloud.zabbix.template.Template;
 import com.vdncloud.zabbix.user.User;
 import com.vdncloud.zabbix.user.UserLoginRequest;
 import com.vdncloud.zabbix.user.UserLoginResponse;
@@ -46,5 +47,10 @@ public class ZabbixApi {
 
            return new Item(this.apiUrl, this.auth);
        }
+       
+       public Template template(){
+    	   return new Template(this.apiUrl, this.auth);
+       }
+       
        
 }

@@ -83,8 +83,7 @@ public class ItemApiTest extends ZabbixApiTestBase{
 	public void updateTest() throws Exception{
 		
 		ItemUpdateRequest request=new ItemUpdateRequest();
-		ItemUpdateRequest.Params params=request.getParams();
-		
+		ItemUpdateRequest.Params params=request.getParams();		
 		
 		params.setItemid(23669);
 		
