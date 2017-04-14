@@ -10,8 +10,9 @@ import static org.junit.Assert.fail;
 public class ZabbixApiTestBase {
     protected static Logger logger=LoggerFactory.getLogger(ZabbixApiTestBase.class);
     protected String user="Admin";
-    protected String password="zabbix";
-    
+   protected String password="zabbix";
+ // protected String user="zhangrongjun";
+   // protected String password="zhangrongjun123!@#";
     protected ZabbixApi zabbixApi;
     
     public ZabbixApiTestBase(){

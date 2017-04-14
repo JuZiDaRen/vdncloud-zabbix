@@ -76,6 +76,23 @@
     
   </dependencies>
   
+  
+  
+   <distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>feigong release repository</name>
+			<url>http://121.40.225.22:8081/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>feigong snapshot repository</name>
+			<url>http://121.40.225.22:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+  
+  
+  
   <build>
       
   <finalName>${project.artifactId}-${project.version}</finalName> 	
@@ -90,7 +107,16 @@
         </resource>
     </resources>
 		
-		<plugins>
+		<plugins>				
+      <plugin>  
+        <groupId>org.apache.maven.plugins</groupId>  
+        <artifactId>maven-surefire-plugin</artifactId>  
+        <version>2.18.1</version>  
+        <configuration>  
+          <skipTests>true</skipTests>  
+        </configuration>  
+      </plugin>  
+		
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
