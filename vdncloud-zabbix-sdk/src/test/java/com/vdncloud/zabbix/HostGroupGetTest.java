@@ -29,22 +29,22 @@ public class HostGroupGetTest extends ZabbixApiTestBase{
 	}
 
 	
-//	@Test
-//	public void testGet() throws Exception{
-//		
-//		HostgroupGetRequest request=new HostgroupGetRequest();
-//		HostgroupGetRequest.Params params=request.getParams();
-//		
-//	//	params.addHostId(10110);
-//		
-//		HostgroupGetResponse response=zabbixApi.hostgroup().get(request);
-//		
-//		
-//		System.out.println(getGson().toJson(response));
-//		
-//	    logger.debug(getGson().toJson(response));
-//		
-//	}
+	@Test
+	public void testGet() throws Exception{
+		
+		HostgroupGetRequest request=new HostgroupGetRequest();
+		HostgroupGetRequest.Params params=request.getParams();
+		params.addTemplateId(10106);
+	//	params.addHostId(10110);
+		
+		HostgroupGetResponse response=zabbixApi.hostgroup().get(request);
+		
+		
+		System.out.println(getGson().toJson(response));
+		
+	    logger.debug(getGson().toJson(response));
+		
+	}
 	
 	private HostgroupCreateResponse hostgroupCreateResponse;
 	
@@ -86,28 +86,28 @@ public class HostGroupGetTest extends ZabbixApiTestBase{
 //	        }
 //	    }
 	
-	@Test
-	   public void testUpdate1() {
-
-	        int targetGroupid = 9;
-	        String name = "test_hostgroup_update1";
-	        HostgroupUpdateRequest request = new HostgroupUpdateRequest();
-	        request.getParams().setName(name);
-	        request.getParams().setGroupid(targetGroupid);
-
-	        try {
-	            HostgroupUpdateResponse response = zabbixApi.hostgroup().update(request);
-
-	            assertNotNull(response);
-
-	            assertNotNull(response.getResult().getGroupids());
-
-	            int groupId = response.getResult().getGroupids().get(0);
-	            assertEquals(targetGroupid, groupId);
-	        } catch (ZabbixApiException e) {
-	            fail(e.getMessage());
-	        }
-	    }
+//	@Test
+//	   public void testUpdate1() {
+//
+//	        int targetGroupid = 9;
+//	        String name = "test_hostgroup_update1";
+//	        HostgroupUpdateRequest request = new HostgroupUpdateRequest();
+//	        request.getParams().setName(name);
+//	        request.getParams().setGroupid(targetGroupid);
+//
+//	        try {
+//	            HostgroupUpdateResponse response = zabbixApi.hostgroup().update(request);
+//
+//	            assertNotNull(response);
+//
+//	            assertNotNull(response.getResult().getGroupids());
+//
+//	            int groupId = response.getResult().getGroupids().get(0);
+//	            assertEquals(targetGroupid, groupId);
+//	        } catch (ZabbixApiException e) {
+//	            fail(e.getMessage());
+//	        }
+//	    }
 	
 	   
 	   

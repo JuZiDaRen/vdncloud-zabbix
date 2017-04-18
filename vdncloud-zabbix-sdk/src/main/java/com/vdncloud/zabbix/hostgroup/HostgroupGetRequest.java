@@ -7,15 +7,11 @@ import com.vdncloud.zabbix.util.ZbxListUtils;
 
 public class HostgroupGetRequest extends ZabbixApiRequest{
 
-	private Params params=new Params();
-	
+	private Params params=new Params();	
 	
 	public HostgroupGetRequest() {
 		setMethod("hostgroup.get");
-	}
-	
-	
-	
+	}		
 	
 	/**
 	 * @return the params
@@ -39,7 +35,9 @@ public class HostgroupGetRequest extends ZabbixApiRequest{
 
 	public class Params {
 		private List<Integer> hostids;
-
+		
+		private List<Integer> templateids;
+		
 		/**
 		 * @return the hostids
 		 */
@@ -52,11 +50,31 @@ public class HostgroupGetRequest extends ZabbixApiRequest{
 		 */
 		public void setHostids(List<Integer> hostids) {
 			this.hostids = hostids;
-		}
+		}		
 		
+		
+		/**
+		 * @return the templateids
+		 */
+		public List<Integer> getTemplateids() {
+			return templateids;
+		}
+
+		/**
+		 * @param templateids the templateids to set
+		 */
+		public void setTemplateids(List<Integer> templateids) {
+			this.templateids = templateids;
+		}
+
 		public void addHostId(Integer id) {
             hostids = ZbxListUtils.add(hostids, id);
         }
+		
+		public void addTemplateId(Integer id) {
+            templateids = ZbxListUtils.add(templateids, id);
+        }
+				
 		
 		
 	}

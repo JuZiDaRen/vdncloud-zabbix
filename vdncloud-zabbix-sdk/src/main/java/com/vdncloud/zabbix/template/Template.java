@@ -55,5 +55,24 @@ public class Template extends ZabbixApiMethod{
 	}
 	
 	
+	public TemplateUpdateResponse update(TemplateUpdateRequest request) throws ZabbixApiException {
+        TemplateUpdateResponse response = null;
+        request.setAuth(auth);
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        String requestJson = gson.toJson(request);
+
+        try {
+            String responseJson = sendRequest(requestJson);
+
+            response = gson.fromJson(responseJson, TemplateUpdateResponse.class);
+        } catch (ZabbixApiException e) {
+            throw new ZabbixApiException(e);
+        }
+
+        return response;
+    }
+	
 	
 }
